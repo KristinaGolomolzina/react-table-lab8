@@ -1,0 +1,23 @@
+.pattern {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    background: linear-gradient(135deg, #a8b6f591 0%, #764ba2 100%);
+    color: rgb(0, 0, 0);
+}
+
+/* Основное содержимое */
+.main-content {
+    flex: 1;
+    text-align: center;
+    padding: 2rem;
+    margin: 2rem;
+}
+
+.footer {
+    background: rgba(40, 40, 40, 0.9);
+    color: white;
+    text-align: center;
+    padding: 1.5rem;
+    margin-top: auto;
+}

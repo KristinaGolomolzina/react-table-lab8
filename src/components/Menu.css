@@ -1,0 +1,66 @@
+/* Боковое меню */
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 280px;
+    height: 200vh;
+    background: linear-gradient(180deg, #2c3e50 0%, #34495e 100%);
+    color: white;
+    z-index: 1000;
+    transition: transform 0.3s ease;
+    box-shadow: 2px 0 20px rgba(0, 0, 0, 0.3);
+}
+
+/* Состояния меню */
+.sidebar-open {
+    transform: translateX(0);
+}
+
+.sidebar-closed {
+    transform: translateX(-100%);
+}
+
+/* Заголовок меню */
+.sidebar-header {
+    padding: 2rem 1.5rem 1rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.sidebar-header h2 {
+    margin: 0;
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+
+
+.sidebar-item {
+    display: block;
+    text-decoration: none;
+    color: white;
+    padding: 15px 15px;
+    border: none;
+    background: none;
+    width:calc(100% - 30px); /* Ширина с учетом отступов */
+    text-align: left;
+    cursor: pointer;
+
+}
+
+.sidebar-item:hover {
+    background-color: rgba(126, 25, 156, 0.377);
+}
+
+
+/* Затемнение фона */
+.menu-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+}
