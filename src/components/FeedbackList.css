@@ -1,0 +1,90 @@
+/* Стили для всего блока отзывов */
+.feedback-list {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Заголовок блока отзывов */
+.feedback-header {
+    text-align: center;
+    padding: 5px;
+    background: linear-gradient(135deg, var(--color-primary, #3498db), #9b59b6);
+    border-radius: 15px;
+    margin-bottom: 12px;
+}
+
+/* Стили для карточки отзыва */
+.feedback-item {
+    background: white;
+    border-radius: 12px;
+    padding: 20px;
+    margin-bottom: 16px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    border: 1px solid #e0e0e0;
+    transition: all 0.3s ease;
+}
+
+
+/* Верхняя строка с именем и кнопкой */
+.feedback-header {
+    display: flex;
+    text-align: center;
+    margin-bottom: 12px;
+}
+
+.feedback-user-info {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    flex: 1;
+}
+
+.feedback-name {
+    color: #000000;
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.feedback-rating {
+    font-size: 14px;
+    color: #000000;
+    font-weight: 500;
+}
+
+/* Дата отзыва */
+.feedback-date {
+    font-size: 14px;
+    color: #95a5a6;
+    margin-bottom: 12px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+/* Текст отзыва */
+.feedback-message {
+    color: #34495e;
+    line-height: 1.6;
+    font-size: 15px;
+    background: #f8f9fa;
+    padding: 16px;
+    border-radius: 8px;
+    border-left: 4px solid #3498db;
+}
+
+/* Кнопка удаления */
+.delete-button {
+    background: #ff5f4e;
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: all 0.3s ease;
+}
+
+.delete-button:hover {
+    background: #c0392b; 
+}

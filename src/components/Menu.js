@@ -1,60 +1,61 @@
 import { Link } from 'react-router-dom'; // Добавляем Link
-import './Menu.css'
-import Button from './Button';
+import { Offcanvas, ListGroup, Button} from 'react-bootstrap'; // Выдвигающаяся панель,  Контейнер для списка элементов
+import { useContext } from 'react'; // для темы
+import { ThemeContext } from './ThemeContext';
+// import './Menu.css'
+// import Button from './Button';
 
-function Menu({ isMenuOpen, setIsMenuOpen }) { // Убираем currentPage, setCurrentPage
+function Menu({ isMenuOpen, setIsMenuOpen }) { 
     const labs = [
         { id: 'lab1', title: 'Лаб 1: Hello World', path: '/lab1' },
         { id: 'lab2', title: 'Лаб 2: Основы React. Работа с объектами JS', path: '/lab2' },
-        { id: 'lab4', title: 'Лаб 4: Хуки React. Работа с Redux. Работа с роутингом. Формы', path: '/lab4' }
+        { id: 'lab4', title: 'Лаб 4: Хуки React. Работа с Redux. Работа с роутингом.', path: '/lab4' },
+        { id: 'lab5', title: 'Лаб 5: Хуки React. Работа с Redux. Формы', path: '/lab5' }
     ];
 
-    const openMenu = () => {
-        setIsMenuOpen(!isMenuOpen);
-    };
+    //захотелось менять тему меню
+    const {isDark} = useContext(ThemeContext)
 
+    //убрали const openMenu
     // Функция для закрытия меню при клике на ссылку
-    const closeMenu = () => {
-        setIsMenuOpen(false);
-    };
-
-    const sidebarClass = isMenuOpen ? "sidebar sidebar-open" : "sidebar sidebar-closed";
+    const closeMenu = () => { setIsMenuOpen(false) }
 
     return (
-        <div>
-            <Button onClick={openMenu}>
-                открыть
-            </Button>
+         <Offcanvas show={isMenuOpen} onHide={closeMenu} placement="start"
+         data-bs-theme={isDark ? "dark" : "light"}>
+            <Offcanvas.Header closeButton>
+                <Offcanvas.Title>Лабораторные работы</Offcanvas.Title>
+            </Offcanvas.Header>
 
-            <div className={sidebarClass}>
-                <div className="sidebar-header">
-                    <h2>Меню</h2>
-                    <Button onClick={openMenu}> закрыть </Button>
-                </div>
-
-                <nav className="sidebar-nav">
-                    {labs.map(lab => (
-                        <div key={lab.id} className="sidebar-item">
-                            <Link
-                                to={lab.path}
-                                className="sidebar-item"
-                                onClick={closeMenu}
+            <Offcanvas.Body>
+                <ListGroup variant="flush"> 
+                    {labs.map((lab) => (
+                        <ListGroup.Item
+                            key={lab.id}
+                            action
+                            as={Link}
+                            to={lab.path}
+                            onClick={closeMenu}
+                            className="d-flex justify-content-between align-items-center"
+                        >
+                            <span className="me-2">{lab.title}</span>
+                            <Button
+                                variant="outline-secondary"
+                                size="sm"
+                                title='Открыть в новой вкладке'
+                                onClick={(e) => {
+                                    e.preventDefault();
+                                    e.stopPropagation();
+                                    window.open(lab.path, '_blank');
+                                }}
                             >
-                                <span className="sidebar-text">{lab.title}</span>
-                            </Link>
-                            <button
-                                className="sidebar-item"
-                                onClick={() => window.open(lab.path, '_blank')}
-                            >
-                                Открыть в новой вкладке
-                            </button>
-                        </div>
+                                📄
+                            </Button>
+                        </ListGroup.Item>
                     ))}
-                </nav>
-            </div>
-
-            {isMenuOpen && <div className="menu-overlay" onClick={openMenu}></div>}
-        </div>
+                </ListGroup>
+            </Offcanvas.Body>
+        </Offcanvas>
     );
 }
 

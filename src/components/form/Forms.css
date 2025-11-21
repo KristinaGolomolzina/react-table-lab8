@@ -1,0 +1,116 @@
+/* Общие стили для форм */
+.form-container {
+  max-width: 400px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.form-title {
+  text-align: center;
+  margin-bottom: 20px;
+  color: var(--color-text);
+}
+
+/* Стили для групп полей */
+.form-group {
+  margin-bottom: 15px;
+}
+
+.form-label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: 600;
+  color: var(--color-text);
+}
+
+.form-input {
+  width: 100%;
+  padding: 10px;
+  border: 2px solid var(--color-border, #ccc);
+  border-radius: 5px;
+  font-size: 16px;
+  background: white;
+  color: #000;
+  transition: border-color 0.3s ease;
+}
+
+.form-input:focus {
+  outline: none;
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.1);
+}
+
+.form-input.error {
+  border-color: #e74c3c;
+  box-shadow: 0 0 0 3px rgba(231, 76, 60, 0.1);
+}
+
+/* Стили для ошибок */
+.error-message {
+  display: block;
+  color: #e74c3c;
+  font-size: 14px;
+  margin-top: 5px;
+}
+
+/* Стили для кнопок */
+.submit-button {
+  width: 100%;
+  padding: 12px;
+  background-color: var(--color-primary);
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.submit-button:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.submit-button:disabled {
+  background-color: #999;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+}
+
+/* Стили для чекбокса */
+.checkbox-group {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.checkbox-input {
+  margin-right: 10px;
+}
+
+
+/* Стили для блока обратной связи */
+.feedback-section {
+  margin-top: 40px;
+  padding-top: 30px;
+  border-top: 2px solid var(--color-border);
+}
+
+.section-title {
+  text-align: center;
+  margin-bottom: 30px;
+  color: var(--color-text);
+}
+
+/* Ссылки в формах */
+.form-link {
+  color: var(--color-primary);
+  text-decoration: none;
+  text-align: center;
+  display: block;
+}
+
+.form-link:hover {
+  text-decoration: underline;
+}

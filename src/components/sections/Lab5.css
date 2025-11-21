@@ -1,0 +1,36 @@
+.lab5-page {
+  min-height: 100vh;
+  padding: 20px;
+  transition: all 1s ease;
+  background-color: var(--color-background);
+  color: var(--color-text);
+}
+
+/* Стили для табов */
+.tabs-container {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 30px;
+  border-bottom: 2px solid var(--color-primary);
+}
+
+.tab-button {
+  padding: 12px 30px;
+  background-color: transparent;
+  color: var(--color-text);
+  border: none;
+  border-radius: 5px 5px 0 0;
+  cursor: pointer;
+  font-size: 16px;
+  margin: 0 5px;
+  transition: all 0.3s ease;
+}
+
+.tab-button.active {
+  background-color: var(--color-primary);
+  color: white;
+}
+
+.tab-button:hover:not(.active) {
+  background-color: rgba(0, 123, 255, 0.1);
+}

@@ -21,3 +21,8 @@
     padding: 1.5rem;
     margin-top: auto;
 }
+
+/* Адаптивность */
+@media (max-width: 768px) {
+  .main-content {padding: 10px;}
+}
